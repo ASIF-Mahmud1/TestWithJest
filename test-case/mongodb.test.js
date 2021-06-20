@@ -2,6 +2,7 @@ const {MongoClient} = require('mongodb');
 
 let connection;
 let db;
+const dbName = 'sponge-bob'
 const url = 'mongodb://127.0.0.1:27017'
 
 beforeAll(async () => {
@@ -9,7 +10,7 @@ beforeAll(async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  db = await connection.db(global.__MONGO_DB_NAME__);
+  db = await connection.db(dbName);
 });
 
 afterAll(async () => {
