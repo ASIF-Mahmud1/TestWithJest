@@ -13,6 +13,7 @@ beforeAll(async () => {
   db = await connection.db(dbName);
 });
 
+
 afterAll(async () => {
   await connection.close();
 });
@@ -42,3 +43,12 @@ it('should aggregate docs from collection', async () => {
     {_id: 'Video', count: 1},
   ]);
 });
+
+afterEach(async () => {
+  try {
+    const files = db.collection('files');
+    await files.deleteMany({})
+  } catch (err) {
+    console.log(err)
+  }
+})
