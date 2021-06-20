@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "jest": "^27.0.4",
+    "mongodb": "^3.6.9",
     "superagent": "^6.1.0",
     "supertest": "^6.1.3"
   },
